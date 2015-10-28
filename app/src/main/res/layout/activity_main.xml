@@ -16,7 +16,6 @@
         android:layout_width="120dp"
         android:layout_height="80dp"
         android:layout_centerInParent="true"
-        app:max="100"
         />
 
     <com.github.zeng1990java.widget.WaveProgressView
@@ -31,6 +30,5 @@
         app:waveAmplitude="4dp"
         app:waveBorderWidth="3dp"
         app:waveBorderRadius="2dp"
-
         />
 </RelativeLayout>
