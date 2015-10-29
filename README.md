@@ -5,7 +5,22 @@ a simple progress view.
 
 <img src="/image/wave_progress_view.gif" alt="progress-circular-indeterminate" title="progress-circular-indeterminate" width="477" height="791" />
 
-## setup
+###gradle
+/build.gradle
+~~~
+jitpack.io
+
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+~~~
+/app/build.gradle
+~~~
+compile 'com.github.zeng1990java:WaveProgressView:1.0.2'
+~~~
+###usage
 ```xml
 <com.github.zeng1990java.widget.WaveProgressView
         android:id="@+id/wave_progress_view"
