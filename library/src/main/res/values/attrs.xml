@@ -5,7 +5,7 @@
         <attr name="waveBorderWidth" format="dimension"/>
         <attr name="waveBorderRadius" format="dimension"/>
         <attr name="waveAmplitude" format="dimension"/>
-        <attr name="max" format="integer"/>
-        <attr name="progress" format="integer"/>
+        <attr name="waveMax" format="integer"/>
+        <attr name="waveProgress" format="integer"/>
     </declare-styleable>
 </resources>

@@ -65,8 +65,8 @@ public class WaveProgressView extends View {
         mHaftBorderRadius = mBorderRadius / 2;
 
         mWaveColor = a.getColor(R.styleable.WaveProgressView_waveColor, mWaveColor);
-        mMax = a.getInt(R.styleable.WaveProgressView_max, 100);
-        mProgress = a.getInteger(R.styleable.WaveProgressView_progress, 0);
+        mMax = a.getInt(R.styleable.WaveProgressView_waveMax, 100);
+        mProgress = a.getInteger(R.styleable.WaveProgressView_waveProgress, 0);
 
         a.recycle();
 
