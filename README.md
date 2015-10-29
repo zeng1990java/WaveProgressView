@@ -21,7 +21,7 @@ a simple progress view.
   android:layout_alignParentBottom="true"
   android:layout_marginBottom="10dp"
   android:layout_centerHorizontal="true"
-  app:max="100"
+  app:waveMax="100"
   app:waveColor="#3498db"
   app:waveAmplitude="4dp"
   app:waveBorderWidth="3dp"
