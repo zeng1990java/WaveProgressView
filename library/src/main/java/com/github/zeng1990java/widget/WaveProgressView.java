@@ -10,6 +10,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
@@ -56,6 +57,15 @@ public class WaveProgressView extends View {
 
     public WaveProgressView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+
+
+        int attrId = getResources().getIdentifier("colorAccent", "attr", getContext().getPackageName());
+        if (attrId > 0){
+            TypedValue colorAccent = new TypedValue();
+            getContext().getTheme().resolveAttribute(attrId, colorAccent, true);
+            mWaveColor = colorAccent.data;
+        }
+
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.WaveProgressView);
 

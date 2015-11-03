@@ -12,6 +12,16 @@
     tools:context=".MainActivity">
 
     <com.github.zeng1990java.widget.WaveProgressView
+        android:id="@+id/wave_progress_view_0"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        app:waveAmplitude="5dp"
+        app:waveMax="100"
+        app:waveProgress="30"
+        />
+
+    <com.github.zeng1990java.widget.WaveProgressView
         android:id="@+id/wave_progress_view"
         android:layout_width="120dp"
         android:layout_height="80dp"
@@ -27,7 +37,7 @@
         android:layout_centerHorizontal="true"
         app:waveMax="100"
         app:waveColor="#3498db"
-        app:waveAmplitude="4dp"
+        app:waveAmplitude="8dp"
         app:waveBorderWidth="3dp"
         app:waveBorderRadius="2dp"
         />

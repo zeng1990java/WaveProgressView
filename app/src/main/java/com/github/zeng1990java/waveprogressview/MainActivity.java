@@ -14,17 +14,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         WaveProgressView waveProgressView = (WaveProgressView) findViewById(R.id.wave_progress_view);
         waveProgressView.setMax(100);
-        ObjectAnimator progressAnim = ObjectAnimator.ofInt(waveProgressView, "progress", 0, waveProgressView.getMax());
-        progressAnim.setDuration(10 * 1000);
-        progressAnim.setRepeatCount(ObjectAnimator.INFINITE);
-        progressAnim.setRepeatMode(ObjectAnimator.RESTART);
-        progressAnim.start();
+        animWave(waveProgressView, 10 * 1000);
 
         waveProgressView = (WaveProgressView) findViewById(R.id.wave_progress_view_2);
-        progressAnim = ObjectAnimator.ofInt(waveProgressView, "progress", 0, waveProgressView.getMax());
-        progressAnim.setDuration(15 * 1000);
+        animWave(waveProgressView, 15 * 1000);
+
+        waveProgressView = (WaveProgressView) findViewById(R.id.wave_progress_view_0);
+        animWave(waveProgressView, 5 * 1000);
+    }
+
+    private void animWave(WaveProgressView waveProgressView, long duration){
+        ObjectAnimator progressAnim = ObjectAnimator.ofInt(waveProgressView, "progress", 0, waveProgressView.getMax());
+        progressAnim.setDuration(duration);
         progressAnim.setRepeatCount(ObjectAnimator.INFINITE);
         progressAnim.setRepeatMode(ObjectAnimator.RESTART);
         progressAnim.start();
     }
+
 }
