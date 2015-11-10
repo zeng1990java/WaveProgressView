@@ -9,6 +9,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -21,6 +23,13 @@ import android.view.animation.LinearInterpolator;
  * @date 15/10/28 下午5:46
  */
 public class WaveProgressView extends View {
+
+    private static final String STATE_INSTANCE = "state_instance";
+    private static final String STATE_MAX = "state_max";
+    private static final String STATE_PROGRESS = "state_progress";
+    private static final String STATE_WAVE_COLOR = "state_wave_color";
+
+    private static final int DEFAULT_COLOR = Color.parseColor("#1abc9c");
 
     private Paint mPaint;
     private Paint mBorderPaint;
@@ -43,7 +52,7 @@ public class WaveProgressView extends View {
     private int mMax = 100;
     private int mProgress = 0;
 
-    private int mWaveColor = Color.parseColor("#1abc9c");
+    private int mWaveColor = DEFAULT_COLOR;
 
     private ObjectAnimator mAngleAnim;
 
@@ -233,6 +242,29 @@ public class WaveProgressView extends View {
     public void setAngle(int angle){
         this.mAngle = angle;
         invalidate();
+    }
+
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(STATE_INSTANCE, super.onSaveInstanceState());
+        bundle.putInt(STATE_MAX, mMax);
+        bundle.putInt(STATE_PROGRESS, mProgress);
+        bundle.putInt(STATE_WAVE_COLOR, mWaveColor);
+        return bundle;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        if (state instanceof Bundle){
+            Bundle bundle = (Bundle) state;
+            mMax = bundle.getInt(STATE_MAX, 100);
+            mProgress = bundle.getInt(STATE_PROGRESS, 0);
+            mWaveColor = bundle.getInt(STATE_WAVE_COLOR, DEFAULT_COLOR);
+            super.onRestoreInstanceState(bundle.getParcelable(STATE_INSTANCE));
+            return ;
+        }
+        super.onRestoreInstanceState(state);
     }
 
     private static double clamp(double value, double max, double min) {
