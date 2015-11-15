@@ -18,7 +18,7 @@ repositories {
 ~~~
 /app/build.gradle
 ~~~
-compile 'com.github.zeng1990java:WaveProgressView:1.0.4'
+compile 'com.github.zeng1990java:WaveProgressView:1.0.5'
 ~~~
 ###usage
 ```xml
